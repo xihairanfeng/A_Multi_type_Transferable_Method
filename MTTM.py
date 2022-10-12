@@ -62,10 +62,10 @@ def structuralGraph(realFileName, fakeFileName, dataset):
     return train_Real_Graph, train_Fake_Graph, test_Real_Graph, test_Fake_Graph
 
 def get_train_validate_test(dataset):
-    realFileName = 'Data/' + dataset + '/realData.csv'
-    fakeFileName = 'Data/' + dataset + '/fakeData.csv'
+    realFileName = 'Datasets/' + dataset + '/realData.csv'
+    fakeFileName = 'Datasets/' + dataset + '/fakeData.csv'
     train_Real_Graph, train_Fake_Graph, test_Real_Graph, test_Fake_Graph = structuralGraph(realFileName, fakeFileName, dataset)
-    node2vecReFile = "./node2vecFeature/" + dataset + "Feature.txt"
+    node2vecReFile = "Datasets/node2vecFeature/" + dataset + "Feature.txt"
     data = pd.read_csv(node2vecReFile, sep=' ', skiprows=1, header=None)
     edges = np.array(data.iloc[:, 0:1]) + np.array(data.iloc[:, 1:2])
     embeddings = np.array(data.iloc[:, 2:66])

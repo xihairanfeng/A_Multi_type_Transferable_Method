@@ -22,11 +22,11 @@ def get_edge_embeddings(graph, savepath):  # node2vec生成边向量表征(64维
 
 def pro_data_main(dataset):
     print("Input dataset:", dataset)
-    pathReal = 'Data/' + dataset + '/realData.csv'
+    pathReal = './' + dataset + '/realData.csv'
     #only real graph to be embedded
     # pathFake = 'Data/' + dataset + '/fakeData.csv'
     graph = get_graph(pathReal) #real graph
-    savepath = 'node2vecFeature/' + dataset.lower()+ 'Feature.txt'  # 最终数据
+    savepath = './node2vecFeature/' + dataset.lower()+ 'Feature.txt'  # 最终数据
     get_edge_embeddings(graph, savepath)
 
 if __name__ == '__main__':
